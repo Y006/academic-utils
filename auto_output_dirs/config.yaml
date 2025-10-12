@@ -1,0 +1,18 @@
+# 需要安装 pip install PyYAML==6.0
+
+schema_version: 1.0
+
+project:
+  root_dir: "./output"    # 输出根目录
+
+experiment_id:
+  enable_auto: true
+  format: "exp{seq:03d}-{date}-{hash}"      # 模板：date, seq, hash 三要素
+  date_fmt: "%m%d"                          # 日期格式
+  seq_width: 4                              # 仅供你参考；真正控制位宽请在 format 中用 {seq:03d}
+  hash_len: 6                               # 配置短哈希长度
+  reset: "daily"                            # none | daily | monthly
+  counter_path: "./output/.counter.json"    # 计数器文件（简单 JSON）
+
+logging:
+  save_config_copy: true
